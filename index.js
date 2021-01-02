@@ -3,6 +3,8 @@ const app = express();
 const port = 5000;
 const bodyParser = require("body-parser");
 
+const config = require("./config/key");
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -10,20 +12,17 @@ const { User } = require("./models/user");
 
 const mongoose = require("mongoose");
 mongoose
-  .connect(
-    "mongodb+srv://psick:skdltm55@boilerplate.vbjgi.mongodb.net/boilerplate?retryWrites=true&w=majority",
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      useCreateIndex: true,
-      useFindAndModify: true,
-    }
-  )
+  .connect(config.mongoURI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: true,
+  })
   .then(() => console.log("MongoDB connected."))
   .catch(console.log);
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send("Hello World!23123123123");
 });
 
 app.post("/register", (req, res) => {
