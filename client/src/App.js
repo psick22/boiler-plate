@@ -1,6 +1,6 @@
 import "./App.css";
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import LandingPage from "./components/views/LandingPage/LandingPage.js";
 import LoginPage from "./components/views/LoginPage/LoginPage.js";
@@ -18,13 +18,13 @@ function App() {
         of them to render at a time
       */}
         <Switch>
-          <Route exact path="/">
-            <LandingPage></LandingPage>
+          <Route exact path="/" component={LandingPage}>
+            <LandingPage />
           </Route>
-          <Route path="/login">
+          <Route exact path="/login" component={LoginPage}>
             <LoginPage />
           </Route>
-          <Route path="/register">
+          <Route exact path="/register" component={RegisterPage}>
             <RegisterPage />
           </Route>
         </Switch>
