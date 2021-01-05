@@ -29,3 +29,7 @@ module.exports = {
     "mongodb+srv://<user>:<password>@boilerplate.vbjgi.mongodb.net/<dbname>?retryWrites=true&w=majority",
 };
 ```
+
+## 4. Source
+
+[John Ahn (Youtube)](https://www.youtube.com/watch?v=fgoMqmNKE18&feature=emb_title)
